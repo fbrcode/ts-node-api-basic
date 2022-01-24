@@ -1,0 +1,13 @@
+git init
+npm init -y
+vi .gitignore
+yarn add -D typescript
+yarn add module-alias
+yarn add -D @types/module-alias
+touch tsconfig.json
+mkdir src
+mkdir test
+mkdir src/util
+touch src/util/module-alias.ts
+touch src/index.ts
+touch test/test.ts
