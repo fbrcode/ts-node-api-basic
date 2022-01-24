@@ -11,3 +11,6 @@ mkdir src/util
 touch src/util/module-alias.ts
 touch src/index.ts
 touch test/test.ts
+yarn add -D @typescript-eslint/eslint-plugin
+yarn add -D eslint
+yarn add -D @typescript-eslint/parser
