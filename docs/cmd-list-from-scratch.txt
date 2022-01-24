@@ -14,3 +14,5 @@ touch test/test.ts
 yarn add -D @typescript-eslint/eslint-plugin
 yarn add -D eslint
 yarn add -D @typescript-eslint/parser
+touch .eslintrc
+yarn add -D ts-node-dev
