@@ -16,3 +16,13 @@ yarn add -D eslint
 yarn add -D @typescript-eslint/parser
 touch .eslintrc
 yarn add -D ts-node-dev
+yarn add -D jest
+yarn add -D ts-jest
+yarn add -D @types/jest
+touch jest.config.js
+touch test/jest.config.js
+touch test/jest-setup.ts
+yarn add -D supertest
+yarn add -D @types/supertest
+mkdir test/functional
+touch test/functional/forecast.test.ts
