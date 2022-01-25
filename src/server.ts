@@ -15,16 +15,15 @@ export class SetupServer extends Server {
   }
 
   private setupExpress(): void {
-    this.app.use(bodyParser.json())
+    this.app.use(bodyParser.json());
   }
 
   private SetupControlers(): void {
     const forecastController = new ForecastController();
-    this.addControllers([forecastController])
+    this.addControllers([forecastController]);
   }
 
   public getApp(): Application {
     return this.app;
   }
-
 }
