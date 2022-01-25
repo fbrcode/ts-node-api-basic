@@ -26,3 +26,12 @@ yarn add -D supertest
 yarn add -D @types/supertest
 mkdir test/functional
 touch test/functional/forecast.test.ts
+yarn add express
+yarn add body-parser
+yarn add @overnightjs/core
+yarn add -D @types/express
+touch src/server.ts
+mkdir src/controllers
+touch src/controllers/forecast.ts
+yarn add -D prettier
+touch .prettierrc
