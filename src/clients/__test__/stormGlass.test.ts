@@ -16,5 +16,5 @@ describe('StormGlass client', () => {
     const stormGlass = new StormGlass(axios);
     const response = await stormGlass.fetchPoints(lat, lng);
     expect(response).toEqual(stormglassNormalizedResponseFixture);
-  })
-})
+  });
+});

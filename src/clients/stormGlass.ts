@@ -37,7 +37,7 @@ export class StormGlass {
   readonly stormGlassAPISource = 'noaa';
   // readonly stormGlassAPIKey = '0765ebaa-7f6c-11ec-b2e3-0242ac130002-0765ec22-7f6c-11ec-b2e3-0242ac130002';
 
-  constructor(protected request: AxiosStatic) {};
+  constructor(protected request: AxiosStatic) {}
 
   public async fetchPoints(lat: number, lng: number): Promise<ForecastPoint[]> {
     const requestURL = `https://api.stormglass.io/v2/weather/point?lat=${lat}&lng=${lng}&params=${this.stormGlassAPIParams}&source=${this.stormGlassAPISource}`;
@@ -52,19 +52,19 @@ export class StormGlass {
     return this.normalizeResponse(response.data);
   }
 
-  private normalizeResponse(points: StormGlassForecastResponse): ForecastPoint[] {
-    return points.hours
-      .filter(this.isValidPoint.bind(this))
-      .map((point) => ({
-        time: point.time,
-        swellDirection: point.swellDirection[this.stormGlassAPISource],
-        swellHeight: point.swellHeight[this.stormGlassAPISource],
-        swellPeriod: point.swellPeriod[this.stormGlassAPISource],
-        waveDirection: point.waveDirection[this.stormGlassAPISource],
-        waveHeight: point.waveHeight[this.stormGlassAPISource],
-        windDirection: point.windDirection[this.stormGlassAPISource],
-        windSpeed: point.windSpeed[this.stormGlassAPISource],
-      }));
+  private normalizeResponse(
+    points: StormGlassForecastResponse
+  ): ForecastPoint[] {
+    return points.hours.filter(this.isValidPoint.bind(this)).map((point) => ({
+      time: point.time,
+      swellDirection: point.swellDirection[this.stormGlassAPISource],
+      swellHeight: point.swellHeight[this.stormGlassAPISource],
+      swellPeriod: point.swellPeriod[this.stormGlassAPISource],
+      waveDirection: point.waveDirection[this.stormGlassAPISource],
+      waveHeight: point.waveHeight[this.stormGlassAPISource],
+      windDirection: point.windDirection[this.stormGlassAPISource],
+      windSpeed: point.windSpeed[this.stormGlassAPISource],
+    }));
   }
 
   private isValidPoint(point: Partial<StormGlassPoint>): boolean {
@@ -79,5 +79,4 @@ export class StormGlass {
       point.windSpeed?.[this.stormGlassAPISource]
     );
   }
-
 }
