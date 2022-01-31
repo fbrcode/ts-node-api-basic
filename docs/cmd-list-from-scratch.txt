@@ -35,3 +35,12 @@ mkdir src/controllers
 touch src/controllers/forecast.ts
 yarn add -D prettier
 touch .prettierrc
+mkdir src/clients
+mkdir src/clients/__test__
+touch src/clients/__test__/stormGlass.test.ts
+touch src/clients/stormGlass.ts
+yarn add axios
+yarn add -D @types/axios
+mkdir test/fixtures
+touch test/fixtures/stormglass_weather_3_hours.json
+touch test/fixtures/fixtures/stormglass_normalized_response_3_hours.json
